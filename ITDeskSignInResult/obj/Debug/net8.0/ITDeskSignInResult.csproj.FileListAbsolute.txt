@@ -1,0 +1,12 @@
+C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskSignInResult\bin\Debug\net8.0\ITDeskSignInResult.deps.json
+C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskSignInResult\bin\Debug\net8.0\ITDeskSignInResult.dll
+C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskSignInResult\bin\Debug\net8.0\ITDeskSignInResult.pdb
+C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskSignInResult\obj\Debug\net8.0\ITDeskSignInResult.csproj.AssemblyReference.cache
+C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskSignInResult\obj\Debug\net8.0\ITDeskSignInResult.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskSignInResult\obj\Debug\net8.0\ITDeskSignInResult.AssemblyInfoInputs.cache
+C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskSignInResult\obj\Debug\net8.0\ITDeskSignInResult.AssemblyInfo.cs
+C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskSignInResult\obj\Debug\net8.0\ITDeskSignInResult.csproj.CoreCompileInputs.cache
+C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskSignInResult\obj\Debug\net8.0\ITDeskSignInResult.dll
+C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskSignInResult\obj\Debug\net8.0\refint\ITDeskSignInResult.dll
+C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskSignInResult\obj\Debug\net8.0\ITDeskSignInResult.pdb
+C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskSignInResult\obj\Debug\net8.0\ref\ITDeskSignInResult.dll
