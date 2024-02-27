@@ -58,4 +58,40 @@ public class AuthController(UserManager<AppUser> userManager, SignInManager<AppU
         string token = jwtService.CreateToken(appUser, request.RememberMe);
         return Ok(new {AccessToken = token});
     }
+
+    [HttpPost]
+    public async Task<IActionResult> GoogleLogin(GoogleLoginDto request, CancellationToken cancellationToken)
+    {
+        AppUser? appUser = await userManager.FindByEmailAsync(request.Email);
+        if (appUser is not null)
+        {
+            string token = jwtService.CreateToken(appUser, true);
+            return Ok(new { AccessToken = token });
+        }
+
+        string userName = request.Email;
+
+        appUser = new()
+        {
+            Email = request.Email,
+            FirstName = request.FirstName,
+            LastName = request.LastName,
+            UserName = userName,
+            GoogleProvideId = request.Id
+        };
+
+        IdentityResult result = await userManager.CreateAsync(appUser);
+
+        if (result.Succeeded)
+        {
+            string token = jwtService.CreateToken(appUser, true);
+            return Ok(new { AccessToken = token });
+        }
+
+        IdentityError? errorResult = result.Errors.FirstOrDefault();
+
+        string errorMessage = result.Errors.FirstOrDefault() is null ? "Giriş esnasında bir hatayla karşılaştık lütfen yöneticinize danışın!" : errorResult.Description;
+
+        return BadRequest(new { Message = errorMessage });
+    }
 }

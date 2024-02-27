@@ -10,3 +10,4 @@ C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskSignInResult\obj\Debug\ne
 C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskSignInResult\obj\Debug\net8.0\refint\ITDeskSignInResult.dll
 C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskSignInResult\obj\Debug\net8.0\ITDeskSignInResult.pdb
 C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskSignInResult\obj\Debug\net8.0\ref\ITDeskSignInResult.dll
+C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskSignInResult\obj\Debug\net8.0\ITDeskSignInResult.sourcelink.json
