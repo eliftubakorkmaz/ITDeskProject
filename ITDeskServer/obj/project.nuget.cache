@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "D3LaOJuDHIZ3k5c7i6VjrlcoIjBxaukS+nfCozYkj/uU9R2eyIrRBUpalgXmwefZhq7WpeSjXB8YeRy4hXjBjQ==",
+  "dgSpecHash": "zdzOUYiW3h/FaORkzuT6+UNkgFuHqs9Rux5wWdAwtHNalcTUPp8SUJtjt7d13QCNQh5w0b5ELw9HNmrbOjax9w==",
   "success": true,
   "projectFilePath": "C:\\Users\\etuba\\OneDrive\\Masaüstü\\ITDeskProject\\ITDeskServer\\ITDeskServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\etuba\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\etuba\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\etuba\\.nuget\\packages\\entityframework\\6.1.0\\entityframework.6.1.0.nupkg.sha512",
+    "C:\\Users\\etuba\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
     "C:\\Users\\etuba\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\etuba\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.4\\microsoft.aspnet.identity.core.2.2.4.nupkg.sha512",
     "C:\\Users\\etuba\\.nuget\\packages\\microsoft.aspnet.identity.entityframework\\2.2.4\\microsoft.aspnet.identity.entityframework.2.2.4.nupkg.sha512",

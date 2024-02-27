@@ -155,3 +155,5 @@ C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskServer\bin\Debug\net8.0\M
 C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskServer\bin\Debug\net8.0\ITDeskSignInResult.dll
 C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskServer\bin\Debug\net8.0\ITDeskSignInResult.pdb
 C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskServer\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskServer\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskServer\obj\Debug\net8.0\ITDeskServer.sourcelink.json
