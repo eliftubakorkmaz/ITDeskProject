@@ -5,6 +5,7 @@ using ITDeskServer.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
@@ -20,7 +21,7 @@ builder.Services.AddCors(configure =>
 });
 
 #region Dependency Injection
-builder.Services.AddScoped<JwtService>();
+builder.Services.TryAddScoped<JwtService>();
 #endregion
 
 #region Authentication

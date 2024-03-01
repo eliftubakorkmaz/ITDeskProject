@@ -1,18 +1,18 @@
 ﻿using Azure.Core;
 using FluentValidation.Results;
+using ITDeskServer.Abstraction;
 using ITDeskServer.DTOs;
 using ITDeskServer.Models;
 using ITDeskServer.Services;
 using ITDeskServer.Validator;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System;
 
 namespace ITDeskServer.Controllers;
-[Route("api/[controller]/[action]")]
-[ApiController]
-public class AuthController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, JwtService jwtService) : ControllerBase
+[AllowAnonymous]
+public class AuthController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, JwtService jwtService) : ApiController
 {
 
     [HttpPost]

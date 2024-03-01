@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ITDeskSignInResult")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c7e55360e698f767efed086213e5035470490994")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1797da5ccb4765e3175ad36dbf5bd1cb0efab88b")]
 [assembly: System.Reflection.AssemblyProductAttribute("ITDeskSignInResult")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ITDeskSignInResult")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

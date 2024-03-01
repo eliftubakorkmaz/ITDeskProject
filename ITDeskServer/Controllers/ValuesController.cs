@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using ITDeskServer.Abstraction;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ITDeskServer.Controllers;
-[Route("api/[controller]/[action]")]
-[ApiController]
-[Authorize(AuthenticationSchemes = "Bearer")]
-public sealed class ValuesController : ControllerBase
+
+public sealed class ValuesController : ApiController
 {
     [HttpGet]
     public IActionResult Get()
