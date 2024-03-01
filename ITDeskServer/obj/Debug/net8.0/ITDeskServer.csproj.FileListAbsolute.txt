@@ -158,3 +158,8 @@ C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskServer\bin\Debug\net8.0\M
 C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskServer\bin\Debug\net8.0\FluentValidation.dll
 C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskServer\obj\Debug\net8.0\ITDeskServer.sourcelink.json
 C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskServer\bin\Debug\net8.0\GenericFileService.dll
+C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskServer\bin\Debug\net8.0\Microsoft.AspNetCore.OData.dll
+C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskServer\bin\Debug\net8.0\Microsoft.OData.Core.dll
+C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskServer\bin\Debug\net8.0\Microsoft.OData.Edm.dll
+C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskServer\bin\Debug\net8.0\Microsoft.OData.ModelBuilder.dll
+C:\Users\etuba\OneDrive\Masaüstü\ITDeskProject\ITDeskServer\bin\Debug\net8.0\Microsoft.Spatial.dll
