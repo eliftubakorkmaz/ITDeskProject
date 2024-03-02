@@ -105,6 +105,8 @@ app.MapControllers();
 
 ExtensionsMiddleware.AutoMigration(app);
 ExtensionsMiddleware.CreateFirstUser(app);
+ExtensionsMiddleware.CreateRoles(app);
+ExtensionsMiddleware.CreateUserRole(app);
 
 app.Run();
 

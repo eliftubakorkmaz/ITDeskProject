@@ -1,39 +1,42 @@
-﻿using Azure.Core;
-using FluentValidation.Results;
+﻿using FluentValidation.Results;
 using ITDeskServer.Abstraction;
+using ITDeskServer.Context;
 using ITDeskServer.DTOs;
 using ITDeskServer.Models;
 using ITDeskServer.Services;
 using ITDeskServer.Validator;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ITDeskServer.Controllers;
 [AllowAnonymous]
-public class AuthController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, JwtService jwtService) : ApiController
+public class AuthController(
+    ApplicationDbContext context,
+    UserManager<AppUser> userManager,
+    SignInManager<AppUser> signInManager,
+    JwtService jwtService) : ApiController
 {
-
     [HttpPost]
+
     public async Task<IActionResult> Login(LoginDto request, CancellationToken cancellationToken)
     {
-        //validasyon kontrolu
         LoginValidator validator = new();
         ValidationResult validationResult = validator.Validate(request);
 
         if (!validationResult.IsValid)
         {
-            return StatusCode(422,validationResult.Errors.Select(s => s.ErrorMessage));
+            return StatusCode(422, validationResult.Errors.Select(s => s.ErrorMessage));
         }
 
         AppUser? appUser = await userManager.FindByNameAsync(request.UserNameOrEmail);
-       if (appUser is null)
+        if (appUser is null)
         {
             appUser = await userManager.FindByEmailAsync(request.UserNameOrEmail);
             if (appUser is null)
             {
-                return BadRequest(new { Message = "Kullanıcı Bulunamadı!" });
+                return BadRequest(new { Message = "Kullanıcı bulunamadı!" });
             }
         }
 
@@ -43,20 +46,33 @@ public class AuthController(UserManager<AppUser> userManager, SignInManager<AppU
         {
             TimeSpan? timeSpan = appUser.LockoutEnd - DateTime.UtcNow;
             if (timeSpan is not null)
-                return BadRequest(new { Message = $"Kullanıcınız 3 kere yanlış şifre girişinden  dolayı {Math.Ceiling(timeSpan.Value.TotalMinutes)} dakika kilitlenmiştir." });
+                return BadRequest(new
+                {
+                    Message = $"Kullanıcınız 3 kere yanlış şifre girşinden dolayı {Math.Ceiling(timeSpan.Value.TotalMinutes)} dakika kitlenmiştir"
+                });
+            else
+                return BadRequest(new { Message = $"Kullanıcınız 3 kere yanlış şifre girşinden dolayı 15 dakika kitlenmiştir" });
         }
 
         if (result.IsNotAllowed)
         {
-            return BadRequest(new { Message = "Mail adresiniz onaylı değil" });
+            return BadRequest(new { Message = "Mail adresiniz onaylı değil!" });
         }
+
         if (!result.Succeeded)
         {
             return BadRequest(new { Message = "Şifreniz yanlış" });
         }
 
-        string token = jwtService.CreateToken(appUser, request.RememberMe);
-        return Ok(new {AccessToken = token});
+        var roles =
+            context.AppUserRoles
+            .Where(p => p.UserId == appUser.Id)
+            .Include(p => p.Role)
+            .Select(s => s.Role!.Name)
+            .ToList();
+
+        string token = jwtService.CreateToken(appUser, roles, request.RememberMe);
+        return Ok(new { AccessToken = token });
     }
 
     [HttpPost]
@@ -65,7 +81,14 @@ public class AuthController(UserManager<AppUser> userManager, SignInManager<AppU
         AppUser? appUser = await userManager.FindByEmailAsync(request.Email);
         if (appUser is not null)
         {
-            string token = jwtService.CreateToken(appUser, true);
+            var roles =
+            context.AppUserRoles
+            .Where(p => p.UserId == appUser.Id)
+            .Include(p => p.Role)
+            .Select(s => s.Role!.Name)
+            .ToList();
+
+            string token = jwtService.CreateToken(appUser, roles, true);
             return Ok(new { AccessToken = token });
         }
 
@@ -84,13 +107,16 @@ public class AuthController(UserManager<AppUser> userManager, SignInManager<AppU
 
         if (result.Succeeded)
         {
-            string token = jwtService.CreateToken(appUser, true);
+            string token = jwtService.CreateToken(appUser, new(), true);
             return Ok(new { AccessToken = token });
         }
 
         IdentityError? errorResult = result.Errors.FirstOrDefault();
 
-        string errorMessage = result.Errors.FirstOrDefault() is null ? "Giriş esnasında bir hatayla karşılaştık lütfen yöneticinize danışın!" : errorResult.Description;
+        string errorMessage =
+            errorResult is null ?
+            "Giriş esnasında bir hatayla karşılaştık lütfen yöneticinize danışın!" :
+            errorResult.Description;
 
         return BadRequest(new { Message = errorMessage });
     }

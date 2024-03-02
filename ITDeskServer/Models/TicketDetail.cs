@@ -2,6 +2,10 @@
 
 public sealed class TicketDetail
 {
+    public TicketDetail() 
+    {
+        Id = Guid.NewGuid();
+    }
     public Guid Id { get; set; }
     public Guid TicketId { get; set; }
     public Guid AppUserId { get; set; }
